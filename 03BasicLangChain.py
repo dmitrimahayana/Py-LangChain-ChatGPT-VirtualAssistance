@@ -2,9 +2,9 @@
 from langchain.llms import OpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
-import Config
+import os
 
-llm = OpenAI(openai_api_key=Config.open_ai_secret_key)
+llm = OpenAI(openai_api_key=os.environ.get('CHATGPT_API_KEY'))
 memory = ConversationBufferMemory()
 conversation = ConversationChain(
     llm=llm,

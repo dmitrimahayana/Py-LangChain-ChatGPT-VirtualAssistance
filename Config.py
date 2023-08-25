@@ -1,1 +1,0 @@
-open_ai_secret_key = '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'

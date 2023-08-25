@@ -1,7 +1,7 @@
 import openai
-import Config
+import os
 
-openai.api_key = Config.open_ai_secret_key
+openai.api_key = os.environ.get('CHATGPT_API_KEY')
 messages = [
     {'role': 'system', 'content': 'You are friendly chatbot.'},
     {'role': 'user', 'content': 'Hi, my name is Andrea'},

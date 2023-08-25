@@ -2,14 +2,14 @@
 from langchain.llms import OpenAI
 from langchain.memory import ConversationSummaryBufferMemory
 from langchain.chains import ConversationChain
-import Config
+import os
 
 paragraph = "your name is dmitri and you live in Jember. \
 you have 2 daughters and they really lovely. \
 their names are naisha and nafeesa"
 
 llm = OpenAI(
-    openai_api_key=Config.open_ai_secret_key
+    openai_api_key=os.environ.get('CHATGPT_API_KEY')
 )
 memory = ConversationSummaryBufferMemory(llm=llm, max_token_limit=100)
 memory.save_context({"input": "Hello"}, {"output": "What's up"})

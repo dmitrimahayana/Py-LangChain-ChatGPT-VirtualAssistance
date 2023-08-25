@@ -1,3 +1,4 @@
 langchain
 openai
 tiktoken
+gpt4all
