@@ -3,7 +3,7 @@ from langchain.prompts import PromptTemplate
 
 llm = HuggingFacePipeline.from_model_id(
 
-    model_id="meta-llama/Llama-2-7b-chat-hf",
+    model_id="bigscience/bloom-1b7",
     task="text-generation",
     model_kwargs={"temperature": 0, "max_length": 64},
 )
