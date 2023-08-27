@@ -9,7 +9,7 @@ local_path = (
 )
 
 # Callbacks support token-wise streaming
-callbacks = [StreamingStdOutCallbackHandler()]
+# callbacks = [StreamingStdOutCallbackHandler()]
 
 # If you want to use a custom model add the backend parameter
 # Check https://docs.gpt4all.io/gpt4all_python.html for supported backends
@@ -17,7 +17,7 @@ llm = GPT4All(
     model=local_path,
     backend="llama",
     # backend="gptj",
-    callbacks=callbacks,
+    # callbacks=callbacks,
     verbose=True)
 
 # template = """Question: {question}
@@ -46,11 +46,11 @@ memory = ConversationBufferMemory()
 conversation = ConversationChain(
     llm=llm,
     memory=memory,
-    verbose=True
+    # verbose=True
 )
-response = conversation.predict(input="Hello, my name is Andrea and i live at jember")
+response = conversation.predict(input="My name is dmitri and i live in Jember. I have 2 daughters and they are really lovely. Their names are naisha and nafeesa")
 print(response)
-response = conversation.predict(input="What is 1+1?")
+response = conversation.predict(input="Who is naisha and nafeesa?")
 print(response)
 response = conversation.predict(input="where do i live?")
 print(response)
