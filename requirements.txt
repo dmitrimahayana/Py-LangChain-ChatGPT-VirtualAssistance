@@ -3,4 +3,3 @@ openai
 tiktoken
 gpt4all
 transformers
-torch
