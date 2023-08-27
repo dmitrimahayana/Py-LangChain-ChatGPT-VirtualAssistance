@@ -2,7 +2,6 @@ from pydantic import Field
 from langchain.llms.base import LLM
 from typing import Any, List, Mapping, Optional
 from langchain.llms import GPT4All
-# from gpt4all import GPT4All
 from langchain.callbacks.manager import CallbackManagerForLLMRun
 from langchain.memory import ConversationSummaryBufferMemory, ConversationBufferMemory
 from langchain.chains import ConversationChain
@@ -59,8 +58,6 @@ class MyCustomLLM(LLM):
         # self.auto_download()
 
         self.gpt4_model_instance = GPT4All(
-            # model_name=self.model_name,
-            # model_path=self.model_folder_path,
             model=self.model_folder_path + self.model_name,
             backend=self.backend,
             verbose=True
@@ -100,14 +97,6 @@ class MyCustomLLM(LLM):
             'model_parameters': self._get_model_default_parameters
         }
 
-    @property
-    def _conv_memory(self):
-        return ConversationChain(
-            llm=self.gpt4_model_instance,
-            memory=self.memory,
-            # verbose=True
-        )
-
     def _call(
             self,
             prompt: str, stop: Optional[List[str]] = None,
@@ -127,10 +116,5 @@ class MyCustomLLM(LLM):
             **kwargs
         }
 
-        # conversation = ConversationChain(
-        #     llm=self.gpt4_model_instance,
-        #     memory=self.memory,
-        #     verbose=True
-        # )
         response = self.conversation.predict(input=prompt)
         return response

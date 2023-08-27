@@ -13,18 +13,18 @@ llm = MyCustomLLM(
 )
 
 time.sleep(1)
-response = llm("My name is dmitri and i live in Jember. I have 2 daughters and they are really lovely. Their names are naisha and nafeesa")
-print(response)
-response = llm("Who is naisha and nafeesa?")
-print(response)
-response = llm("where do i live?")
-print(response)
+# response = llm("My name is dmitri and i live in Jember. I have 2 daughters and they are really lovely. Their names are naisha and nafeesa")
+# print(response)
+# response = llm("Who is naisha and nafeesa?")
+# print(response)
+# response = llm("where do i live?")
+# print(response)
 
-# while True:
-#     query = input('Enter your Query: ')
-#     if query == "exist":
-#         break
-#     response = llm(
-#         query
-#     )
-#     print(response)
+while True:
+    query = input('Enter your Query: ')
+    if query == "exist":
+        break
+    response = llm(
+        query
+    )
+    print("Bot: "+response)
