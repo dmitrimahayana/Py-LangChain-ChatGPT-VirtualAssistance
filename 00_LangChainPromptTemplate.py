@@ -52,3 +52,5 @@ def find_keyword(conversation, product_name):
 if __name__ == "__main__":
     conv = define_model()
     find_keyword(conv, "puffer coat")
+    find_keyword(conv, "faux fur coat")
+    find_keyword(conv, "blazer coat")
