@@ -1,6 +1,6 @@
 import time
 
-from MyCustomLLM import MyCustomLLM
+from Module.MyCustomLLM import MyCustomLLM
 
 model_folder_path = "C:/Users/dmitr/AppData/Local/nomic.ai/GPT4All/"
 model_name = "llama-2-7b-chat.ggmlv3.q4_0.bin"
