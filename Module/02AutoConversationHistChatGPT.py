@@ -27,5 +27,3 @@ def chatgpt_conversation(prompt):
 
 response = chatgpt_conversation("Hi bot you remember my name right?")
 print(response)
-response = chatgpt_conversation("Hi bot you remember my name right?")
-print(response)

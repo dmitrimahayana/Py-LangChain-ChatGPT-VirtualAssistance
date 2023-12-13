@@ -1,4 +1,5 @@
 import openai, os
+from langchain.llms import openai
 
 openai.api_key = os.environ.get('CHATGPT_API_KEY')
 messages = [
