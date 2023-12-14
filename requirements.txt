@@ -2,4 +2,5 @@ langchain==0.0.272
 openai==0.27.9
 tiktoken
 gpt4all
-transformers
+transformers==4.31.0
+accelerate
