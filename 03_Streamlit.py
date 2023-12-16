@@ -1,11 +1,11 @@
 import streamlit as st
 import requests
 import io
+import os
 from PIL import Image
-from IPython.display import display
 
 API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": f"Bearer {st.secrets.hugging_face_token.api_key}"}
 
 
 def query_stabilitydiff(payload):
@@ -13,11 +13,11 @@ def query_stabilitydiff(payload):
     return response.content
 
 
-with st.sidebar:
-    # openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
-    # "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
-    "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
-    "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
+# with st.sidebar:
+#     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+#     "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+#     "[View the source code](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
+#     "[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
 st.title("💬 Chatbot - Text to Image")
 st.caption("🚀 A Streamlit chatbot powered by Stable Diffusion")
