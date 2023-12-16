@@ -4,3 +4,6 @@ tiktoken
 gpt4all
 transformers==4.31.0
 accelerate
+requests
+streamlit
+IPython

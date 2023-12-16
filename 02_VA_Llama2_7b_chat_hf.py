@@ -15,8 +15,8 @@ def build_pipeline(model_dir):
     pipeline = transformers.pipeline(
         "text-generation",
         model=model_dir,
-        torch_dtype=torch.float32,
-        # torch_dtype=torch.float16,
+        # torch_dtype=torch.float32,
+        torch_dtype=torch.float16,
         device_map="auto",
     )
     return pipeline, tokenizer
@@ -42,7 +42,7 @@ def find_sequence(pipeline, tokenizer, question):
 
 if __name__ == "__main__":
     # Model folder path and change this accordingly
-    model_dir = "C:\Llama-2-7b-chat-hf"
+    model_dir = "C:\model_huggingface\Llama-2-7b-chat-hf"
 
     # Define pipeline and tokenizer
     pipeline, tokenizer = build_pipeline(model_dir)
