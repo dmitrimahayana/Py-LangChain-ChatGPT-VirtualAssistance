@@ -3,10 +3,9 @@ import requests
 import io
 from PIL import Image
 
-API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
-
 
 def query_stabilitydiff(payload, headers):
+    API_URL = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0"
     response = requests.post(API_URL, headers=headers, json=payload)
     return response.content
 
@@ -17,16 +16,14 @@ with st.sidebar:
 st.title("💬 Chatbot - Text to Image")
 st.caption("🚀 A Streamlit chatbot powered by Stable Diffusion")
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "What kind of image that I need to draw? (example: running cat)"}]
+    st.session_state["messages"] = [
+        {"role": "assistant", "content": "What kind of image that I need to draw? (example: running cat)"}]
 
 # Show previous prompts and results that saved in session
 for message in st.session_state.messages:
-    if message["role"] == "user":
-        st.chat_message("user").write(message["content"])
-    elif message["role"] == "assistant":
-        st.chat_message("assistant").write(message["content"])
-        if "image" in message:
-            st.chat_message("assistant").image(message["image"], caption=message["prompt"], use_column_width=True)
+    st.chat_message(message["role"]).write(message["content"])
+    if "image" in message:
+        st.chat_message("assistant").image(message["image"], caption=message["prompt"], use_column_width=True)
 
 if prompt := st.chat_input():
 
