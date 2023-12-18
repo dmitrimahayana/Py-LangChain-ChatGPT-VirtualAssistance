@@ -12,7 +12,7 @@ def query_stabilitydiff(payload, headers):
 
 
 with st.sidebar:
-    "[View the source code](https://github.com/dmitrimahayana/Py-LangChain-ChatGPT-VirtualAssistance/03_Streamlit_Stable_Diff.py)"
+    "[View the source code](https://github.com/dmitrimahayana/Py-LangChain-ChatGPT-VirtualAssistance/blob/main/03_Streamlit_Stable_Diff.py)"
 
 st.title("💬 Chatbot - Text to Image")
 st.caption("🚀 A Streamlit chatbot powered by Stable Diffusion")
